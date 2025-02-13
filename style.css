@@ -1,0 +1,149 @@
+/* Reset Default Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* General Page Styling */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+
+/* Wrapper for Sticky Footer */
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Header */
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* Navigation Menu */
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background-color: #444;
+    padding: 10px;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f8d210;
+}
+
+
+/* Blog Content Layout */
+
+.blog-container {
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+    padding: 20px;
+}
+
+.articles {
+    display: flex;
+    justify-content: center;
+}
+
+.self {
+    place-self: center;
+}
+
+
+/* Blog Posts */
+
+.blog-post {
+    display: grid;
+    background: white;
+    width: 300px;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.blog-post img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.blog-post h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.blog-post p {
+    font-size: 14px;
+    color: #666;
+}
+
+.blog-post a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.blog-post a:hover {
+    background: #0056b3;
+}
+
+
+/* Button Styles */
+
+.custom_witdh {
+    width: 10%;
+    float: right;
+}
+
+
+/* Footer */
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+    margin-top: 20px;
+}

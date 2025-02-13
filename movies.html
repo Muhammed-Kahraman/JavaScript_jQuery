@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <label for="search_input">Film Adı</label>
+        <input id="search_input" type="text" name="search">
+        <button id="search_button" type="button" class="btn btn-primary">Ara</button>
+    </div>
+    <div id="movies_area" class="col-md-12">
+
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        debugger
+        const apiKey = "38e8b0b";
+        $("#search_button").on("click", function() {
+            debugger
+            let search_query = $("#search_input").val();
+            if (search_query != null) {
+                $.ajax({
+                    url: `http://www.omdbapi.com/?apikey=${apiKey}&s=${search_query}`,
+                    method: "GET",
+                    success: function(response) {
+                        debugger
+                        if (response.Response == "True") {
+                            let movies = response.Search;
+                            for (let i = 0; i < movies.length; i++) {
+                                debugger
+                                let movies_area = $("#movies_area").addClass("btn");
+                                let title = document.createElement("h2").setAttribute("id", "h2id");
+                                title.textContent = movies[i].Title;
+                                movies_area.append(title);
+                                let poster = document.createElement("img");
+                                poster.src = movies[i].Poster;
+                                poster.alt = movies[i].Title;
+                                movies_area.append(poster);
+                                let type = document.createElement("p");
+                                type.textContent = movies[i].Type;
+                                movies_area.append(type);
+                                let year = document.createElement("p");
+                                year.textContent = movies[i].Year;
+                                movies_area.append(year);
+                                let imdbID = document.createElement("p");
+                                imdbID.textContent = movies[i].imdbID;
+                                movies_area.append(imdbID);
+
+                            }
+
+                        }
+
+                    },
+                    error: function() {
+
+                    }
+                });
+            } else {
+                alert("Film Adı Boş Bıraklımaz.");
+            }
+        });
+
+
+    });
+</script>
+
+</html>
